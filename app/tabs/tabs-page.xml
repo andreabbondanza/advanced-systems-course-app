@@ -1,0 +1,14 @@
+<Page class="page"
+    navigatingTo="onNavigatingTo" 
+    actionBarHidden="false"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:cb="nativescript-checkbox">
+    
+    <ActionBar class="action-bar" visibility="collapsed">
+        <Label class="action-bar-title" text="AS - Example app"></Label>
+    </ActionBar>
+
+    <GridLayout rows="*, auto, auto, auto">
+      
+    </GridLayout>
+</Page>

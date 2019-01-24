@@ -1,0 +1,29 @@
+<Page class="page"
+    navigatingTo="onNavigatingTo" 
+    actionBarHidden="true"
+    loaded="{{test}}"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:cb="nativescript-checkbox">
+    
+    <ActionBar class="action-bar" visibility="collapsed">
+        <Label class="action-bar-title" text="AS - Example app"></Label>
+    </ActionBar>
+
+    <GridLayout rows="*, auto, auto, auto">
+        <GridLayout row="0" rows="auto, auto, auto">
+            <Label text="{{IsTokenLoaded}}" />
+            <Button row="1" class="login-tf" tap="{{test}}" text="carica" />
+            <Button row="2" class="login-tf" tap="{{test1}}" text="cancella" />
+        </GridLayout>
+        <StackLayout row="1">
+            <TextField class="login-tf" hint="email" text="{{ Email }}" />
+            <TextField class="login-tf" hint="password" text="{{ Password }}" />
+            <cb:CheckBox class="login-btn" checked="{{ Remember }}" text="Remember me" fillColor="#333"  />
+            <Button class="login-btn" text="OnLogin" tap="{{Login}}" />
+            <Button class="login-btn" text="Recover Password" tap="{{ Recovery }}" />
+                       
+            
+        </StackLayout>
+        
+    </GridLayout>
+</Page>

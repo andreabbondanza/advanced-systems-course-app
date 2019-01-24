@@ -1,0 +1,66 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "./**/*.vue"
+        ]
+    },
+    "jsRules": {},
+    "rules": {
+        "quotemark": [
+            false,
+            "double",
+            "avoid-escape",
+            "avoid-template"
+        ],
+        "trailing-comma": [
+            true,
+            {
+                "multiline": "false",
+                "singleline": "never"
+            }
+        ],
+        "no-unused-expression": [
+            true,
+            "allow-fast-null-checks"
+        ],
+        "one-line": false,
+        "arrow-parens": false,
+        "no-console": false,
+        "object-literal-sort-keys": false,
+        "max-classes-per-file": false,
+        "curly": [
+            false,
+            "as-needed"
+        ],
+        "max-line-length": [
+            true,
+            160
+        ],
+        "no-empty": [
+            true,
+            "allow-empty-catch",
+            "allow-empty-functions"
+        ],
+        "member-ordering": [
+            true,
+            {
+              "order": [
+                "public-constructor",
+                "private-constructor",
+                "private-static-field",
+                "private-instance-field",
+                "public-static-field",
+                "public-instance-field",
+                "private-instance-method",
+                "protected-instance-method",
+                "public-instance-method"
+              ]
+            }
+          ]
+    },
+    "rulesDirectory": []
+}
