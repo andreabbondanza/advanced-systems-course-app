@@ -11,19 +11,15 @@
 
     <GridLayout rows="*, auto, auto, auto">
         <GridLayout row="0" rows="auto, auto, auto">
-            <Label text="{{IsTokenLoaded}}" />
-            <Button row="1" class="login-tf" tap="{{test}}" text="carica" />
-            <Button row="2" class="login-tf" tap="{{test1}}" text="cancella" />
+            
         </GridLayout>
         <StackLayout row="1">
             <TextField class="login-tf" hint="email" text="{{ Email }}" />
-            <TextField class="login-tf" hint="password" text="{{ Password }}" />
+            <TextField class="login-tf" hint="password" text="{{ Password }}" secure="true" />
             <cb:CheckBox class="login-btn" checked="{{ Remember }}" text="Remember me" fillColor="#333"  />
-            <Button class="login-btn" text="OnLogin" tap="{{Login}}" />
-            <Button class="login-btn" text="Recover Password" tap="{{ Recovery }}" />
-                       
-            
-        </StackLayout>
-        
+            <Button class="login-btn" text="OnLogin" tap="{{Login}}" visibility="{{VisTokenInverse}}" />
+            <Button class="login-btn" text="Recover Password" />
+            <Button class="login-btn" text="Esci" visibility="{{VisToken}}" tap="{{Logout}}" />            
+        </StackLayout>        
     </GridLayout>
 </Page>
