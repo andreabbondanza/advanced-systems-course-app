@@ -14,7 +14,7 @@ export class HomeViewModel extends ViewModel
         this.npsc(["VisToken", "VisTokenInverse"]);
     }
     // properties
-    private email: string = "andrea@dewstudio.eu";
+    private email: string = "andrea@dewstudio.eua";
     public get Email(): string
     {
         return this.email;
@@ -69,10 +69,7 @@ export class HomeViewModel extends ViewModel
             };
             const req = await client.request(
                 {
-                    headers: {
-                        "API-KEY": "HM3a3mtjCOFg7U3IgE8LyUmTMTYSCI20WN1ccnIRTdw=",
-                        "Content-Type": "application/json"
-                    },
+                    headers: client.headers,
                     url: "https://corso.dev.dewstudio.eu/api/login",
                     method: "POST",
                     content: JSON.stringify(json)
@@ -86,7 +83,7 @@ export class HomeViewModel extends ViewModel
             const error = err as HttpError;
             if (error !== null)
             {
-                const response = StandardResponse.jsonToStandardResponse<any>(error.Response.content.toJSON());
+                const response = StandardResponse.jsonToStandardResponse<any>(error.response.content.toJSON());
                 await dialogs.alert(response.errorMessage);
             }
         }

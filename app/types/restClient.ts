@@ -1,4 +1,4 @@
-import { getJSON, HttpRequestOptions, HttpResponse, request } from 'tns-core-modules/http/http';
+import { HttpRequestOptions, HttpResponse, request } from 'tns-core-modules/http/http';
 
 export class HttpError extends TypeError
 {
@@ -7,26 +7,21 @@ export class HttpError extends TypeError
         super();
         this.response = resp;
     }
-    private response: HttpResponse;
-    /**
-     * Error response
-     */
-    public get Response(): HttpResponse
-    {
-        return this.response;
-    }
+    public response: HttpResponse;
 }
 
 export class RestClient
 {
     public headers: any = {
-        "API-KEY": "HM3a3mtjCOFg7U3IgE8LyUmTMTYSCI20WN1ccnIRTdw="
+        "API-KEY": "HM3a3mtjCOFg7U3IgE8LyUmTMTYSCI20WN1ccnIRTdw=",
+        "Content-Type": "application/json"
     };
     public authHeaders(token: string): any
     {
         return {
             "API-KEY": "HM3a3mtjCOFg7U3IgE8LyUmTMTYSCI20WN1ccnIRTdw=",
-            "Authorization": "Bearer ".format([token])
+            "Authorization": "Bearer ".format([token]),
+            "Content-Type": "application/json"
         };
     }
     /**
