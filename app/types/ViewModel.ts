@@ -9,23 +9,20 @@ export class ViewModel extends Observable
         this.init();
     }
     /**
-     * Notify changes for all properties into the array
-     * @param props array with props to notify
-     */
-    protected npsc(props: string[]): void
-    {
-        for (const item of props)
-        {
-            this.notifyPropertyChange(item, this.get(item));
-        }
-    }
-    /**
      * Notify changes for a property
      * @param props array with props to notify
      */
-    protected npc(prop: string): void
+    protected npc(prop: string | string[]): void
     {
-        this.notifyPropertyChange(prop, this.get(prop));
+        if (typeof prop === "string")
+            this.notifyPropertyChange(prop, this.get(prop));
+        else
+        {
+            prop.forEach(item =>
+            {
+                this.notifyPropertyChange(item, this.get(item));
+            });
+        }
     }
     /**
      * Load token if exists

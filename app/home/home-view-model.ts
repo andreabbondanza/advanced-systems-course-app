@@ -11,7 +11,7 @@ export class HomeViewModel extends ViewModel
     constructor()
     {
         super();
-        this.npsc(["VisToken", "VisTokenInverse"]);
+        this.npc(["VisToken", "VisTokenInverse"]);
     }
     // properties
     private email: string = "andrea@dewstudio.eua";
@@ -77,7 +77,7 @@ export class HomeViewModel extends ViewModel
             );
             const response = StandardResponse.jsonToStandardResponse<any>(req.content.toJSON());
             this.tManager.setToken(response.data.token);
-            this.npsc(["VisToken", "VisTokenInverse"]);
+            this.npc(["VisToken", "VisTokenInverse"]);
         } catch (err)
         {
             const error = err as HttpError;
@@ -91,7 +91,7 @@ export class HomeViewModel extends ViewModel
     public Logout()
     {
         this.tManager.unsetToken();
-        this.npsc(["VisToken", "VisTokenInverse"]);
+        this.npc(["VisToken", "VisTokenInverse"]);
     }
     public Recovery(args: EventData)
     {
