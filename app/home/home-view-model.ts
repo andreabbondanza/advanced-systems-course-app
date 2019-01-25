@@ -2,8 +2,9 @@
 import { EventData } from "tns-core-modules/data/observable";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { Visibility } from 'tns-core-modules/ui/page/page';
-import { RestClient } from '~/common/restClient';
-import { ViewModel } from '~/common/ViewModel';
+import { RestClient, HttpError } from '~/types/restClient';
+import { ViewModel } from '~/types/ViewModel';
+import StandardResponse from '~/types/response';
 
 export class HomeViewModel extends ViewModel
 {
@@ -77,18 +78,17 @@ export class HomeViewModel extends ViewModel
                     content: JSON.stringify(json)
                 }
             );
-            if (req.statusCode === 200)
-            {
-                this.tManager.setToken(req.content.toJSON().data.token);
-                this.npsc(["VisToken", "VisTokenInverse"]);
-            }
-            else
-            {
-                await dialogs.alert(req.content.toJSON().errorMessage);
-            }
+            const response = StandardResponse.jsonToStandardResponse<any>(req.content.toJSON());
+            this.tManager.setToken(response.data.token);
+            this.npsc(["VisToken", "VisTokenInverse"]);
         } catch (err)
         {
-            console.log("b" + err);
+            const error = err as HttpError;
+            if (error !== null)
+            {
+                const response = StandardResponse.jsonToStandardResponse<any>(error.Response.content.toJSON());
+                await dialogs.alert(response.errorMessage);
+            }
         }
     }
     public Logout()

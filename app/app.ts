@@ -7,11 +7,8 @@ purpose of the file is to pass control to the app’s first module.
 import linq from "dewlinq";
 import strings from "dewstrings";
 import * as app from "tns-core-modules/application";
-import TokenManager from './common/tokenManager';
-
 linq();
 strings();
-
 app.run({ moduleName: "app-root" });
 
 /*
