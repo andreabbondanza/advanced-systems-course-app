@@ -100,7 +100,14 @@ Instead of the classic:
 ```typescript
 this.notifyPropertyChanged("PropName", this.PropName);
 ```
-now you can use a shorten syntax for multiple notification with:
+now you can use a shorten syntax for single notification with: 
+
+```typescript 
+
+this.npc("PropName"); 
+
+```
+Or you can use a shorten syntax for multiple notification with:
 ```typescript
 this.npc(["PropName", "PropName1", "PropName2"]);
 ```
