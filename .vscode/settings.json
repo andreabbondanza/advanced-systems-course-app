@@ -1,0 +1,11 @@
+{
+    "xml.fileAssociations": [
+        {
+            "systemId": "c:\\Users\\andre\\Source\\Repos\\advanced-systems-course-app\\schema\\tns.xsd",
+            "pattern": "**/**/*.xml"
+        }
+    ],
+    "files.exclude": {
+        "schema": true
+    }
+}

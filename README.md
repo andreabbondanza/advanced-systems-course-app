@@ -45,7 +45,7 @@ Install the following Visual Studio's extensions:
 - _JSON Tools_ by __Erik Lynd__
 - _ignore "g" it_ by __Andrea Vincenzo Abbondanza__
 - _NativeScript_ by __Telerik__
-- _NativeScript XML Snippets_ by __Tsevetan Ganev__
+- _NativeScript Extend_ by __Tsevetan Ganev__
 - _npm Intellisense_ by __Christian Kohler__
 - _Prettier-Standard - Javascript Formatter_ by __numso__
 - _Setting Sync_ by __Shan Khan__ | __(facoltative)__
